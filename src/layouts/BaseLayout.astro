@@ -7,23 +7,19 @@ import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
-interface Props {
-	title?: string | undefined;
-	description?: string | undefined;
-}
 
-const { title, description } = Astro.props;
+const fullName  = "Zete Dai";
 ---
 
 <html lang="en">
 	<head>
-		<MainHead title={title} description={description} />
+		<MainHead title=`${fullName}: Personal Site` description=`The personal site of ${fullName}` />
 	</head>
 	<body>
 		<div class="stack backgrounds">
-			<Nav />
+			<Nav fullName={fullName} />
 			<slot />
-			<Footer />
+			<Footer fullName={fullName} />
 		</div>
 
 		<script>
